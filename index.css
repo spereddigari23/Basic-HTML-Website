@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'AppleThin';
+    src: url('thin.ttf');
+}
+*{
+    font-family: AppleThin;
+    cursor: url("cursor.png"), auto;
+}
+@keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+
+    to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+
+@-webkit-keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+
+    to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+
+@-moz-keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+
+    to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+
+@-webkit-keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+
+    to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.stars {
+    background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 0;
+}
+
+.twinkling {
+    width: 10000px;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
+    -moz-animation: move-background 70s linear infinite;
+    -ms-animation: move-background 70s linear infinite;
+    -o-animation: move-background 70s linear infinite;
+    -webkit-animation: move-background 70s linear infinite;
+    animation: move-background 70s linear infinite;
+
+}
+
+.clouds {
+    width: 10000px;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+
+    -moz-animation: move-background 150s linear infinite;
+    -ms-animation: move-background 150s linear infinite;
+    -o-animation: move-background 150s linear infinite;
+    -webkit-animation: move-background 150s linear infinite;
+    animation: move-background 150s linear infinite;
+}
+
+img {
+    height: 40vh;
+    width: 40vh;
+    position: absolute;
+    z-index: 3;
+    right: 20px;
+}
+
+.Hello {
+    font-family: 'AppleThin';
+    margin-top: 60px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.2em;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.top-menu {
+    font-family: 'AppleThin';
+    margin-top: 40px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.menu-toggle {
+    font-family: 'AppleThin';
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.8em;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menu-toggle:hover {
+    background: transparent;
+    color: #0f6bc2;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    background: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    width: 100%;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #0f6bc2;
+}
+
+.menu-toggle.active+.dropdown-menu {
+    display: block;
+}
+
+.header-text {
+    font-family: 'AppleThin';
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1em;
+    text-align: center;
+    width: 600px;
+    padding: 10px;
+    color: #ffffff;
+    z-index: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.score,
+.rank,
+.time {
+    font-size: 1.6em;
+    margin: 0 20px;
+}
+
+.paragraph {
+    font-family: AppleThin;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 200px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 1.05em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.puppy-container {
+    position: fixed;
+    top: 55%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    /* Center the container both horizontally and vertically */
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.puppy-image {
+    max-width: 60vw;
+    /* Make the image responsive */
+    max-height: 60vh;
+    /* Adjust height as needed */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}

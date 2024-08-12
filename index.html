@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashank Pereddigari</title>
+</head>
+
+<body>
+    <div class="App">
+        <div class="background-container">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png" alt="moon" />
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+            <div class="clouds"></div>
+        </div>
+    </div>
+    <div class="Hello">👋🏾 I'M SHASHANK PEREDDIGARI</div>
+    <div class="top-menu">
+        <button class="menu-toggle">☰ Menu</button>
+        <nav class="dropdown-menu">
+            <a href="https://github.com/spereddigari23" target="_blank" rel="noopener noreferrer">💫 GITHUB</a>
+            <a href="https://www.linkedin.com/in/shashank-pereddigari-12a4b51a1" target="_blank"
+                rel="noopener noreferrer">🖥️ LINKEDIN</a>
+            <a href="https://www.codewars.com/users/spereddigari23" target="_blank" rel="noopener noreferrer">🀄
+                CODEWARS</a>
+            <a href="Shashank.pdf" download>📄 RESUME 🔻</a>
+        </nav>
+    </div>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.querySelector('.dropdown-menu').classList.toggle('show');
+            this.classList.toggle('active');
+        });
+    </script>
+    <div class="header-text">
+        <div class="score">Codewars Score: <span id="score">Loading...</span></div>
+        <div class="rank">Codewars Global Rank: <span id="rank">Loading...</span></div>
+        <script src="codewars.js"></script>
+        <div class="time" id="time">00/00/0000 00:00:00.000 </div>
+    </div>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const dayOfWeek = daysOfWeek[now.getDay()];
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const month = months[now.getMonth()];
+            const date = now.getDate();
+            const suffix = (date % 10 === 1 && date !== 11) ? "st" :
+                (date % 10 === 2 && date !== 12) ? "nd" :
+                    (date % 10 === 3 && date !== 13) ? "rd" : "th";
+            const dateWithSuffix = date + suffix;
+            const year = now.getFullYear();
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const amPm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12;
+            const formattedHours = String(hours).padStart(2, '0');
+            const dateString = `${dayOfWeek}, ${month} ${dateWithSuffix}, ${year}`;
+            const timeString = `${formattedHours}:${minutes}:${seconds} ${amPm}`;
+            document.getElementById('time').textContent = `${dateString}: ${timeString}`;
+        }
+        setInterval(updateDateTime, 50);
+    </script>
+    <div class="paragraph">
+        <p>
+            Born on August 28, 2001, in Central Jersey, the journey began with a foundation of support and love from
+            my parents. At Sayreville War Memorial
+            High School, my leadership as President of the Programming Club led to organizing the school’s inaugural
+            hackathon, while a memorable varsity
+            football championship at MetLife Stadium capped off senior year. The pursuit of a Computer Science
+            degree at Rutgers University, with a focus
+            on machine learning and artificial intelligence, followed. Beyond the professional realm, socializing
+            with friends, diving into open-source
+            machine learning models, and enjoying leisurely park walks with Nova, my loyal dog, are cherished
+            activities.
+        </p>
+    </div>
+    <div class="puppy-container">
+        <img src=NOVA.jpg alt="Puppy Nova" class="puppy-image" />
+    </div>
+</body>
+
+</html>
