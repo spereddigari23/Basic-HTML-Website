@@ -6,8 +6,8 @@ async function fetchUserData() {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        const score = data.honor;
-        const rank = data.leaderboardPosition;
+        const score = data.honor.toLocaleString();
+        const rank = data.leaderboardPosition.toLocaleString();
         document.getElementById('score').textContent = score;
         document.getElementById('rank').textContent = rank;
     } catch (error) {
